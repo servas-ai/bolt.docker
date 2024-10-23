@@ -16,11 +16,11 @@ RUN pnpm install
 # Copy the rest of the application code
 COPY . .
 
+# Copy the .env file
+COPY .env .env
+
 # Build the application
 RUN pnpm run build
-
-# Make sure bindings.sh is executable
-RUN chmod +x bindings.sh
 
 # Expose the port the app runs on (adjust if you specified a different port)
 EXPOSE 3000
